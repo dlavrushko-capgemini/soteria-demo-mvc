@@ -21,6 +21,10 @@ public class AccountService {
     @PersistenceContext
     private EntityManager em;
 
+    public Optional<Account> getByUsername(final Integer username) {
+        return getByUsername(username.toString());
+    }
+
     public Optional<Account> getByUsername(final String username) {
         try {
             return Optional.of(
